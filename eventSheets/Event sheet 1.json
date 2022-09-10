@@ -1,0 +1,1020 @@
+{
+	"name": "Event sheet 1",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked",
+					"objectClass": "PingAvailables",
+					"sid": 184570497769232
+				}
+			],
+			"actions": [],
+			"sid": 417287778238008,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "Message",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 208443300527749
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for",
+							"objectClass": "System",
+							"sid": 743721899653071,
+							"parameters": {
+								"name": "\"\"",
+								"start-index": "1",
+								"end-index": "PeopleOnBreak.Width-1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 188432291974948,
+							"parameters": {
+								"variable": "Message",
+								"value": "DiscordUsernames.Get(PeopleOnBreak.At(loopindex))"
+							}
+						}
+					],
+					"sid": 108250575914758
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 262825390659962,
+							"parameters": {
+								"variable": "Message",
+								"value": "\", \"&ListePersonnes2.SelectedText&\" est en pause à *\"&Zone.Text&\"*\""
+							}
+						},
+						{
+							"id": "send-message",
+							"objectClass": "DiscordWebhook",
+							"sid": 816057080465098,
+							"parameters": {
+								"_url": "\"https://discordapp.com/api/webhooks/896961651780239390/JgJAAGaAYgnsmoprzsGGRJbIIoAeTj3GKXk4LnOK7yS4ItrSosWCpwsGdspoWfbYlaHf\"",
+								"_name": "\"Bot Horaire\"",
+								"_avatar": "\"\"",
+								"_message": "Message"
+							}
+						}
+					],
+					"sid": 262880980556192
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-selection-changed",
+					"objectClass": "ListeJours",
+					"sid": 866401093886930
+				},
+				{
+					"id": "on-selection-changed",
+					"objectClass": "ListePersonnes",
+					"sid": 781525047171947
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "RefreshInfo",
+					"sid": 387016987407881
+				}
+			],
+			"sid": 919730561707380,
+			"isOrBlock": true
+		},
+		{
+			"functionName": "LoadDiscordUsernames",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "add-key",
+					"objectClass": "DiscordUsernames",
+					"sid": 732321141680788,
+					"parameters": {
+						"key": "\"Adam\"",
+						"value": "\"<@359834710593241088>\""
+					}
+				},
+				{
+					"id": "add-key",
+					"objectClass": "DiscordUsernames",
+					"sid": 854007917619470,
+					"parameters": {
+						"key": "\"Back\"",
+						"value": "\"<@493894867458457600>\""
+					}
+				},
+				{
+					"id": "add-key",
+					"objectClass": "DiscordUsernames",
+					"sid": 282804145988663,
+					"parameters": {
+						"key": "\"Francis\"",
+						"value": "\"<@358686668338888704>\""
+					}
+				},
+				{
+					"id": "add-key",
+					"objectClass": "DiscordUsernames",
+					"sid": 845267875455329,
+					"parameters": {
+						"key": "\"Dorcas\"",
+						"value": "\"<@763412106430382083>\""
+					}
+				},
+				{
+					"id": "add-key",
+					"objectClass": "DiscordUsernames",
+					"sid": 280919533277553,
+					"parameters": {
+						"key": "\"Ben\"",
+						"value": "\"<@112326332557365248>\""
+					}
+				},
+				{
+					"id": "add-key",
+					"objectClass": "DiscordUsernames",
+					"sid": 493075734779307,
+					"parameters": {
+						"key": "\"Louka\"",
+						"value": "\"<@456848382586126336>\""
+					}
+				},
+				{
+					"id": "add-key",
+					"objectClass": "DiscordUsernames",
+					"sid": 671974449161331,
+					"parameters": {
+						"key": "\"Adame\"",
+						"value": "\"<@494265358736293930>\""
+					}
+				},
+				{
+					"id": "add-key",
+					"objectClass": "DiscordUsernames",
+					"sid": 338837339384126,
+					"parameters": {
+						"key": "\"Philou\"",
+						"value": "\"<@423883041082048513>\""
+					}
+				}
+			],
+			"sid": 434235959306495
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 348217373456642
+				}
+			],
+			"actions": [
+				{
+					"id": "set-css-style",
+					"objectClass": "ListePersonnes",
+					"sid": 713598741458723,
+					"parameters": {
+						"property-name": "\"background-color\"",
+						"value": "\"black\""
+					}
+				},
+				{
+					"id": "set-css-style",
+					"objectClass": "ListePersonnes",
+					"sid": 579727580436767,
+					"parameters": {
+						"property-name": "\"color\"",
+						"value": "\"white\""
+					}
+				},
+				{
+					"id": "set-css-style",
+					"objectClass": "ListePersonnes2",
+					"sid": 521466764454282,
+					"parameters": {
+						"property-name": "\"background-color\"",
+						"value": "\"black\""
+					}
+				},
+				{
+					"id": "set-css-style",
+					"objectClass": "ListePersonnes2",
+					"sid": 771787433470429,
+					"parameters": {
+						"property-name": "\"color\"",
+						"value": "\"white\""
+					}
+				},
+				{
+					"id": "set-css-style",
+					"objectClass": "ListeJours",
+					"sid": 217378500357101,
+					"parameters": {
+						"property-name": "\"background-color\"",
+						"value": "\"black\""
+					}
+				},
+				{
+					"id": "set-css-style",
+					"objectClass": "ListeJours",
+					"sid": 231683004423595,
+					"parameters": {
+						"property-name": "\"color\"",
+						"value": "\"white\""
+					}
+				},
+				{
+					"id": "set-css-style",
+					"objectClass": "Zone",
+					"sid": 982298686054150,
+					"parameters": {
+						"property-name": "\"background-color\"",
+						"value": "\"black\""
+					}
+				},
+				{
+					"id": "set-css-style",
+					"objectClass": "Zone",
+					"sid": 246885310278515,
+					"parameters": {
+						"property-name": "\"color\"",
+						"value": "\"white\""
+					}
+				},
+				{
+					"id": "set-css-style",
+					"objectClass": "Zone",
+					"sid": 581922827359020,
+					"parameters": {
+						"property-name": "\"outline\"",
+						"value": "\"1px solid white\""
+					}
+				},
+				{
+					"id": "set-css-style",
+					"objectClass": "PingAvailables",
+					"sid": 534125174215618,
+					"parameters": {
+						"property-name": "\"background-color\"",
+						"value": "\"black\""
+					}
+				},
+				{
+					"id": "set-css-style",
+					"objectClass": "PingAvailables",
+					"sid": 494679352217304,
+					"parameters": {
+						"property-name": "\"color\"",
+						"value": "\"white\""
+					}
+				},
+				{
+					"callFunction": "LoadJoursDeLaSemaine",
+					"sid": 685817973671740
+				},
+				{
+					"callFunction": "LoadDiscordUsernames",
+					"sid": 331788426928875
+				},
+				{
+					"id": "request-project-file",
+					"objectClass": "AJAX",
+					"sid": 951782955411365,
+					"parameters": {
+						"tag": "\"Horaire\"",
+						"file": "Horaires.json"
+					}
+				},
+				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 683130905837516
+				},
+				{
+					"callFunction": "RefreshInfo",
+					"sid": 138316143894503
+				}
+			],
+			"sid": 570095744356067
+		},
+		{
+			"functionName": "RefreshInfo",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "ListePersonnesEnPauseAvecMoi",
+					"sid": 988309543409714,
+					"parameters": {
+						"text": "\"\""
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "ListePersonnesEnPause",
+					"sid": 499721102114919,
+					"parameters": {
+						"text": "\"\""
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "JourEtHeure",
+					"sid": 577384903904914,
+					"parameters": {
+						"text": "JoursDeLaSemaine.Get(str(Date.GetDay(Date.Now)))&\", \"&Date.GetHours(Date.Now)&\"h\"&Date.GetMinutes(Date.Now)"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "PersonneEnPauseAvecMoiTitre",
+					"sid": 811517730377581,
+					"parameters": {
+						"text": "\"Personne(s) en pause avec \"&ListePersonnes.SelectedText&\" \"&lowercase(ListeJours.SelectedText)"
+					}
+				},
+				{
+					"callFunction": "LoadPeopleOnBreak",
+					"sid": 698165685702751
+				}
+			],
+			"sid": 374066115618295,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 812240460305590,
+							"parameters": {
+								"first-value": "Date.GetMinutes(Date.Now)",
+								"comparison": 2,
+								"second-value": "10"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "JourEtHeure",
+							"sid": 223098936417704,
+							"parameters": {
+								"text": "JoursDeLaSemaine.Get(str(Date.GetDay(Date.Now)))&\", \"&Date.GetHours(Date.Now)&\"h0\"&Date.GetMinutes(Date.Now)"
+							}
+						}
+					],
+					"sid": 821301922773788
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 940419342019223,
+							"parameters": {
+								"first-value": "Date.GetMinutes(Date.Now)",
+								"comparison": 5,
+								"second-value": "10"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "JourEtHeure",
+							"sid": 590811651783552,
+							"parameters": {
+								"text": "JoursDeLaSemaine.Get(str(Date.GetDay(Date.Now)))&\", \"&Date.GetHours(Date.Now)&\"h\"&Date.GetMinutes(Date.Now)"
+							}
+						}
+					],
+					"sid": 439945998937424
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for",
+							"objectClass": "System",
+							"sid": 652469623480424,
+							"parameters": {
+								"name": "\"People\"",
+								"start-index": "0",
+								"end-index": "Horaire.Height-1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "append-text",
+							"objectClass": "ListePersonnesEnPause",
+							"sid": 955388683598879,
+							"parameters": {
+								"text": "Functions.GetBreaksFromPersonAtHour(Date.GetHours(Date.Now), Date.GetDay(Date.Now), loopindex(\"People\"))"
+							}
+						}
+					],
+					"sid": 995564275754870
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for",
+							"objectClass": "System",
+							"sid": 424329979742302,
+							"parameters": {
+								"name": "\"People\"",
+								"start-index": "0",
+								"end-index": "Horaire.Height-1"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 698192156179215,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-at-xyz",
+									"objectClass": "Horaire",
+									"sid": 782931861153737,
+									"parameters": {
+										"x": "0",
+										"y": "loopindex(\"People\")",
+										"z": "0",
+										"comparison": 0,
+										"value": "ListePersonnes.SelectedText"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 566106455389985,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "for",
+											"objectClass": "System",
+											"sid": 652459236167793,
+											"parameters": {
+												"name": "\"Hour\"",
+												"start-index": "1",
+												"end-index": "10"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 285979683713970,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-at-xyz",
+													"objectClass": "Horaire",
+													"sid": 130254385756726,
+													"parameters": {
+														"x": "loopindex(\"Hour\")",
+														"y": "loopindex(\"People\")",
+														"z": "ListeJours.SelectedIndex+1",
+														"comparison": 0,
+														"value": "\"Pause\""
+													}
+												}
+											],
+											"actions": [],
+											"sid": 532127356086344,
+											"children": [
+												{
+													"eventType": "variable",
+													"name": "AppendString",
+													"type": "string",
+													"initialValue": "",
+													"comment": "",
+													"isStatic": false,
+													"isConstant": false,
+													"sid": 984766196906377
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "for",
+															"objectClass": "System",
+															"sid": 922682176482314,
+															"parameters": {
+																"name": "\"People2\"",
+																"start-index": "0",
+																"end-index": "Horaire.Height-1"
+															}
+														},
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 280843513049682,
+															"parameters": {
+																"first-value": "loopindex(\"People\")",
+																"comparison": 1,
+																"second-value": "loopindex(\"People2\")"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-eventvar-value",
+															"objectClass": "System",
+															"sid": 678699599253881,
+															"parameters": {
+																"variable": "AppendString",
+																"value": "Functions.GetBreaksFromPersonAtHour(loopindex(\"Hour\") + 7, ListeJours.SelectedIndex + 1, loopindex(\"People2\"))"
+															}
+														}
+													],
+													"sid": 221918060416602,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "compare-two-values",
+																	"objectClass": "System",
+																	"sid": 168910906764683,
+																	"parameters": {
+																		"first-value": "find(ListePersonnesEnPauseAvecMoi.Text, AppendString)",
+																		"comparison": 0,
+																		"second-value": "-1"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "append-text",
+																	"objectClass": "ListePersonnesEnPauseAvecMoi",
+																	"sid": 863773553189440,
+																	"parameters": {
+																		"text": "AppendString"
+																	}
+																}
+															],
+															"sid": 983278535496491
+														}
+													]
+												}
+											]
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"functionName": "LoadJoursDeLaSemaine",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "add-key",
+					"objectClass": "JoursDeLaSemaine",
+					"sid": 291474755782662,
+					"parameters": {
+						"key": "\"0\"",
+						"value": "\"Dimanche\""
+					}
+				},
+				{
+					"id": "add-key",
+					"objectClass": "JoursDeLaSemaine",
+					"sid": 464653392910380,
+					"parameters": {
+						"key": "\"1\"",
+						"value": "\"Lundi\""
+					}
+				},
+				{
+					"id": "add-key",
+					"objectClass": "JoursDeLaSemaine",
+					"sid": 452850719748428,
+					"parameters": {
+						"key": "\"2\"",
+						"value": "\"Mardi\""
+					}
+				},
+				{
+					"id": "add-key",
+					"objectClass": "JoursDeLaSemaine",
+					"sid": 949308509090347,
+					"parameters": {
+						"key": "\"3\"",
+						"value": "\"Mercredi\""
+					}
+				},
+				{
+					"id": "add-key",
+					"objectClass": "JoursDeLaSemaine",
+					"sid": 714782830174091,
+					"parameters": {
+						"key": "\"4\"",
+						"value": "\"Jeudi\""
+					}
+				},
+				{
+					"id": "add-key",
+					"objectClass": "JoursDeLaSemaine",
+					"sid": 360199189882448,
+					"parameters": {
+						"key": "\"5\"",
+						"value": "\"Vendredi\""
+					}
+				},
+				{
+					"id": "add-key",
+					"objectClass": "JoursDeLaSemaine",
+					"sid": 649116554949211,
+					"parameters": {
+						"key": "\"6\"",
+						"value": "\"Samedi\""
+					}
+				}
+			],
+			"sid": 286044542378517
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-completed",
+					"objectClass": "AJAX",
+					"sid": 440416072522639,
+					"parameters": {
+						"tag": "\"Horaire\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "load",
+					"objectClass": "Horaire",
+					"sid": 797810392949856,
+					"parameters": {
+						"json": "AJAX.LastData"
+					}
+				}
+			],
+			"sid": 617441039363343
+		},
+		{
+			"functionName": "GetBreaksFromPersonAtHour",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "string",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "Hour",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 394795389655731
+				},
+				{
+					"name": "Day",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 389367993276213
+				},
+				{
+					"name": "Person",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 941381133516525
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 630511070850956,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "BreakString",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 645951839466244
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-at-xyz",
+							"objectClass": "Horaire",
+							"sid": 538549728493326,
+							"parameters": {
+								"x": "Hour-7",
+								"y": "Person",
+								"z": "Day",
+								"comparison": 0,
+								"value": "\"Pause\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 198696922984845,
+							"parameters": {
+								"variable": "BreakString",
+								"value": "\"\r\n-\"&Horaire.At(0,loopindex,0)&\" (\""
+							}
+						}
+					],
+					"sid": 152434758467734,
+					"children": [
+						{
+							"eventType": "variable",
+							"name": "WhileLoopIndex",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 461816621878626
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "while",
+									"objectClass": "System",
+									"sid": 504816548926174
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 625852362846216,
+									"parameters": {
+										"first-value": "Hour-7+WhileLoopIndex",
+										"comparison": 5,
+										"second-value": "0"
+									}
+								},
+								{
+									"id": "compare-at-xyz",
+									"objectClass": "Horaire",
+									"sid": 932638637552136,
+									"parameters": {
+										"x": "Hour-7+WhileLoopIndex",
+										"y": "Person",
+										"z": "Day",
+										"comparison": 0,
+										"value": "\"Pause\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 788690552731768,
+									"parameters": {
+										"variable": "WhileLoopIndex",
+										"value": "-1"
+									}
+								}
+							],
+							"sid": 247058654761446
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 924667603468118,
+									"parameters": {
+										"variable": "BreakString",
+										"value": "Hour+WhileLoopIndex+1&\"h-\""
+									}
+								}
+							],
+							"sid": 384870076906985
+						},
+						{
+							"eventType": "variable",
+							"name": "WhileLoopIndex2",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 359476293468126
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "while",
+									"objectClass": "System",
+									"sid": 843574902870132
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 772953253386702,
+									"parameters": {
+										"first-value": "Hour-7+WhileLoopIndex2",
+										"comparison": 3,
+										"second-value": "10"
+									}
+								},
+								{
+									"id": "compare-at-xyz",
+									"objectClass": "Horaire",
+									"sid": 214210001753915,
+									"parameters": {
+										"x": "Hour-7+WhileLoopIndex2",
+										"y": "Person",
+										"z": "Day",
+										"comparison": 0,
+										"value": "\"Pause\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 981925257398378,
+									"parameters": {
+										"variable": "WhileLoopIndex2",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 242575824632211
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 547917482921490,
+									"parameters": {
+										"variable": "BreakString",
+										"value": "Hour+WhileLoopIndex2&\"h)\""
+									}
+								},
+								{
+									"id": "set-function-return-value",
+									"objectClass": "Functions",
+									"sid": 722875324279365,
+									"parameters": {
+										"value": "BreakString"
+									}
+								}
+							],
+							"sid": 730812627059931
+						}
+					]
+				}
+			]
+		},
+		{
+			"functionName": "LoadPeopleOnBreak",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-size",
+					"objectClass": "PeopleOnBreak",
+					"sid": 107640991240819,
+					"parameters": {
+						"width": "1",
+						"height": "1",
+						"depth": "1"
+					}
+				},
+				{
+					"id": "set-at-xyz",
+					"objectClass": "PeopleOnBreak",
+					"sid": 617952844024121,
+					"parameters": {
+						"x": "0",
+						"y": "0",
+						"z": "0",
+						"value": "0"
+					}
+				}
+			],
+			"sid": 413749442346060,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for",
+							"objectClass": "System",
+							"sid": 632037320715998,
+							"parameters": {
+								"name": "\"People\"",
+								"start-index": "0",
+								"end-index": "Horaire.Height-1"
+							}
+						},
+						{
+							"id": "compare-at-xyz",
+							"objectClass": "Horaire",
+							"sid": 844927938698979,
+							"parameters": {
+								"x": "Date.GetHours(Date.Now)-7",
+								"y": "loopindex(\"People\")",
+								"z": "Date.GetDay(Date.Now)",
+								"comparison": 0,
+								"value": "\"Pause\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "push",
+							"objectClass": "PeopleOnBreak",
+							"sid": 971007197611545,
+							"parameters": {
+								"where": "back",
+								"value": "Horaire.At(0,loopindex(\"People\"),Date.GetDay(Date.Now))",
+								"axis": "x"
+							}
+						}
+					],
+					"sid": 254861770105295
+				}
+			]
+		}
+	],
+	"sid": 406816233541928
+}
